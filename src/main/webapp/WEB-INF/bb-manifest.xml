@@ -31,22 +31,22 @@
     </http-actions>
      -->    
 
-    <!-- 
+
     <application-defs>
       <application handle="app1" type="shared" use-ssl="false" 
                    name="app1.name" can-allow-guest="false">
         <description lang="en_US"></description>
         <links>
           <link>
-            <type value="tool"/>
+            <type value="course_tool"/>
             <name value="tool1.name"/>
-            <url value="tool/index.jsp" />
+            <url value="AddToolToTOC.jsp" />
             <description value="tool1.description" />
           </link>
         </links>
       </application>
     </application-defs>
-    -->
+
 
     <!-- Portal Module Definitions -->
     <!--
@@ -128,6 +128,7 @@
     <permissions>
       <permission type="attribute" name="user.authinfo" actions="get"/>
       <permission type="attribute" name="user.personalinfo" actions="get,set"/>
+      <permission type="blackboard.persist.PersistPermission" name="coursetoc" actions="create, modify" />
       
       <!-- We need these permissions to allow Spring to auto-discover -->
       <!-- and wire beans together and Hibernate to interact with objects. -->
